@@ -1,6 +1,9 @@
 var BouncyBox = function (ctx, filePath) {
 	this.img = null;
-	this.animationInterval = null;	
+	this.animationInterval = null;
+
+	var x = 1;
+	var slope = -1*Math.random();
 
 	(function constructor() {
 		// add image element to dom
@@ -19,7 +22,10 @@ var BouncyBox = function (ctx, filePath) {
 		this.animationInterval = setInterval(function () { 
 			clearCanvas();
 			updatePosition();
-			updateColor();
+		}, 1);
+
+		this.colorInterval = setInterval(function () { 			
+			randomizeColor();
 		}, 1000);
 	};
 
@@ -34,7 +40,7 @@ var BouncyBox = function (ctx, filePath) {
 		// if distance hit, rebound off wall
 	};
 
-	var updateColor = function () {
+	var randomizeColor = function () {
 		// apply randomized color filter to this.img
 
 	};
