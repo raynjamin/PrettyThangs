@@ -6,12 +6,13 @@ var BouncyBox = function (ctx, filePath) {
 		// add image element to dom
 		this.img = document.createElement('img');
 		this.img.src= filePath;
-		this.img.style = "display:none;";
+		this.img.id = 'test';
 		this.img.onload = function (image) {
 			ctx.drawImage(image.srcElement, 0, 0);
 		};
 
 		document.body.appendChild(this.img);
+		this.img.setAttribute('style', "display:none;");
 	}.bind(this)());	
 
 	this.start = function () {
@@ -35,7 +36,6 @@ var BouncyBox = function (ctx, filePath) {
 
 	var updateColor = function () {
 		// apply randomized color filter to this.img
-		
-	};
 
+	};
 };
